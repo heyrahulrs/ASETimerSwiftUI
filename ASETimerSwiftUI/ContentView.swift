@@ -8,50 +8,54 @@
 
 import SwiftUI
 
-extension UIDevice {
-    static var isLandscape: Bool {
-        UIDevice.current.orientation != .landscapeLeft || UIDevice.current.orientation != .landscapeRight
-    }
-    static var isPad: Bool {
-        UIDevice.current.userInterfaceIdiom == .pad
-    }
-}
 struct ContentView: View {
     
     var event = Event()
     
-    @State var time: Time = (0, 0, 0, 0)
-    
     var body: some View {
-        VStack {
-            Spacer()
-            Image(self.event.imageName)
-                .resizable()
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,
-                       maxHeight: UIDevice.isLandscape || UIDevice.isPad ? 312 : 156)
-                .aspectRatio(UIImage(named: "Hero")!.size, contentMode: .fit)
-            if !UIDevice.isLandscape ||  UIDevice.isPad {
-                Spacer()
-                    .frame(height: 48.0)
+        VStack(spacing: 12.0) {
+            HStack(alignment: .bottom) {
+                Image(event.leftImageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 174.0, height: 174)
+                    .offset(x: 28)
+                Image("M0_2x")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 174.0, height: 174)
+                Image(event.rightImageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 174.0, height: 174)
+                    .offset(x: -28)
             }
-            CountdownView(time: self.time)
-                .onAppear {
-                    self.time = getCountdownTime(from: self.event.unixTime)
-                    Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                        self.time = getCountdownTime(from: self.event.unixTime)
-                    }
-            }
             Spacer()
+                .frame(height: 16.0)
+            Text(event.heading)
+                .font(.system(size: 44, weight: .heavy))
+            Text(event.description)
+                .multilineTextAlignment(.center)
+            CountdownView(event: event)
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black)
         .edgesIgnoringSafeArea(.all)
     }
 }
 
-#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+            ContentView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
+            ContentView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            ContentView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+        }
+        .colorScheme(.dark)
     }
 }
-#endif

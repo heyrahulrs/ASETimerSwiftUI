@@ -23,12 +23,19 @@ struct Event {
     
     var heading, description: String
     var unixTime: TimeInterval
-    var imageName: String = "Hero"
+    
+    var leftImageName: String {
+        "L\(Int.random(in: 1...7))_2x"
+    }
+    
+    var rightImageName: String {
+        "R\(Int.random(in: 1...7))_2x"
+    }
     
     init() {
-        self.heading = "Apple Special Event"
-        self.description = "Live from Steve Jobs Theater"
-        self.unixTime = 1568134800
+        self.heading = "WWDC 2020"
+        self.description = "Join us for the first global,\nall-online WWDC20.\nStarts June 22."
+        self.unixTime = 1592845200
     }
     
 }

@@ -10,7 +10,9 @@ import SwiftUI
 
 struct CountdownView: View {
     
-    var time: Time
+    var event: Event
+    
+    @State var time: Time = (0, 0, 0, 0)
     
     var body: some View {
         Group {
@@ -36,11 +38,17 @@ struct CountdownView: View {
                 }
             }
         }
+        .onAppear {
+            self.time = getCountdownTime(from: self.event.unixTime)
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                self.time = getCountdownTime(from: self.event.unixTime)
+            }
+        }
     }
 }
 
 struct CountdownView_Previews: PreviewProvider {
     static var previews: some View {
-        CountdownView(time: (days: 10, hours: 12, minutes: 45, seconds: 10))
+        CountdownView(event: Event())
     }
 }

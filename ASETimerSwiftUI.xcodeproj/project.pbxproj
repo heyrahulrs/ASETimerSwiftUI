@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20C4C35222F833D00011C0B0 /* ASETimerSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASETimerSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20C4C35222F833D00011C0B0 /* ASE Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ASE Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C4C35522F833D00011C0B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20C4C35722F833D00011C0B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		20C4C35922F833D00011C0B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		20C4C35322F833D00011C0B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				20C4C35222F833D00011C0B0 /* ASETimerSwiftUI.app */,
+				20C4C35222F833D00011C0B0 /* ASE Timer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +109,7 @@
 			);
 			name = ASETimerSwiftUI;
 			productName = ASETimerSwiftUI;
-			productReference = 20C4C35222F833D00011C0B0 /* ASETimerSwiftUI.app */;
+			productReference = 20C4C35222F833D00011C0B0 /* ASE Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -310,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "ASETimerSwiftUI/Preview\\ Content";
+				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ASETimerSwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,7 +318,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rahulrs0029.ASETimerSwiftUI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ASE Timer";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -332,6 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "ASETimerSwiftUI/Preview\\ Content";
+				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ASETimerSwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -339,7 +341,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rahulrs0029.ASETimerSwiftUI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ASE Timer";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
