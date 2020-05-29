@@ -20,7 +20,7 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 174.0, height: 174)
                     .offset(x: 28)
-                Image("M0_2x")
+                Image("M0")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 174.0, height: 174)

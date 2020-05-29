@@ -25,11 +25,11 @@ struct Event {
     var unixTime: TimeInterval
     
     var leftImageName: String {
-        "L\(Int.random(in: 1...7))_2x"
+        "L\(Int.random(in: 1...7))"
     }
     
     var rightImageName: String {
-        "R\(Int.random(in: 1...7))_2x"
+        "R\(Int.random(in: 1...7))"
     }
     
     init() {

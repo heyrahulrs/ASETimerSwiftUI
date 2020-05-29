@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "L2_2x.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "L2@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
