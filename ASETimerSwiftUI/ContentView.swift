@@ -41,6 +41,7 @@ struct ContentView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)
+        .statusBar(hidden: true)
     }
 }
 
