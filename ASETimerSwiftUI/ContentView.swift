@@ -10,33 +10,36 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var event = Event()
+    var eventManager: EventManager
     
     var body: some View {
         VStack(spacing: 12.0) {
             HStack(alignment: .bottom) {
-                Image(event.leftImageName)
+                Image(eventManager.leftImageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 174.0, height: 174)
+                    .scaleEffect(0.9)
                     .offset(x: 28)
-                Image("M0")
+                Image(eventManager.middleImageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 174.0, height: 174)
-                Image(event.rightImageName)
+                    .scaleEffect(1.1)
+                Image(eventManager.rightImageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 174.0, height: 174)
+                    .scaleEffect(0.9)
                     .offset(x: -28)
             }
             Spacer()
                 .frame(height: 16.0)
-            Text(event.heading)
+            Text(eventManager.eventHeading)
                 .font(.system(size: 44, weight: .heavy))
-            Text(event.description)
+            Text(eventManager.eventDescription)
                 .multilineTextAlignment(.center)
-            CountdownView(event: event)
+            CountdownView(eventManager: eventManager)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
@@ -47,15 +50,20 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView()
+        let eventManager = EventManager()
+        return Group {
+            ContentView(eventManager: eventManager)
                 .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
-            ContentView()
+                .previewDisplayName("iPhone 11 Pro")
+            ContentView(eventManager: eventManager)
                 .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
-            ContentView()
+                .previewDisplayName("iPhone 11 Pro Max")
+            ContentView(eventManager: eventManager)
                 .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-            ContentView()
+                .previewDisplayName("iPhone 8")
+            ContentView(eventManager: eventManager)
                 .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+                .previewDisplayName("iPhone SE")
         }
         .colorScheme(.dark)
     }

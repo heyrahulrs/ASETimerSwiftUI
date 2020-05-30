@@ -18,6 +18,7 @@
 		20E38AE22318DC9D001BB042 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38AE12318DC9D001BB042 /* CountdownView.swift */; };
 		20E38AE42318DD06001BB042 /* CountdownRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38AE32318DD06001BB042 /* CountdownRow.swift */; };
 		20E38AE62318DD29001BB042 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38AE52318DD29001BB042 /* SeparatorView.swift */; };
+		20F7E0A924824EAE00966704 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7E0A824824EAE00966704 /* EventManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		20E38AE12318DC9D001BB042 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		20E38AE32318DD06001BB042 /* CountdownRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownRow.swift; sourceTree = "<group>"; };
 		20E38AE52318DD29001BB042 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		20F7E0A824824EAE00966704 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				20E38AE32318DD06001BB042 /* CountdownRow.swift */,
 				20E38AE52318DD29001BB042 /* SeparatorView.swift */,
 				20E38ADF2318DC83001BB042 /* Event.swift */,
+				20F7E0A824824EAE00966704 /* EventManager.swift */,
 				20E38ADD2318DC6F001BB042 /* RowType.swift */,
 				20C4C35B22F833D10011C0B0 /* Assets.xcassets */,
 				20C4C36022F833D10011C0B0 /* LaunchScreen.storyboard */,
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F7E0A924824EAE00966704 /* EventManager.swift in Sources */,
 				20E38AE22318DC9D001BB042 /* CountdownView.swift in Sources */,
 				20E38AE42318DD06001BB042 /* CountdownRow.swift in Sources */,
 				20E38AE62318DD29001BB042 /* SeparatorView.swift in Sources */,
