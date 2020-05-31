@@ -14,14 +14,10 @@ struct CountdownView: View {
         
     var body: some View {
         ZStack {
-            if eventManager.isEventConcluded {
-                Text("Keynote has been concluded.".uppercased())
+            if eventManager.isCountdownOver {
+                Text("Countdown\nhas been ended".uppercased())
                     .font(.title)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 18.0)
-            } else if eventManager.isEventStreamingLive {
-                Text("Keynote is now streaming live.".uppercased())
-                    .font(.title)
+                    .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 18.0)
             } else {

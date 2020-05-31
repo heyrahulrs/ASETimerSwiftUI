@@ -22,15 +22,7 @@ class EventManager: ObservableObject {
         event.description
     }
     
-    var isEventStreamingLive: Bool {
-        let timeDifference = event.unixTime - Date().timeIntervalSince1970
-        return timeDifference <= 0 && timeDifference >= -7200
-    }
-    
-    var isEventConcluded: Bool {
-        let timeDifference = event.unixTime - Date().timeIntervalSince1970
-        return timeDifference <= -7200
-    }
+    var isCountdownOver: Bool = false
     
     var leftImageName: String {
         "L\(Int.random(in: 1...7))"
@@ -46,10 +38,22 @@ class EventManager: ObservableObject {
     
     @Published var timeLeft: Time
     
+    var timer: Timer?
+    
     init() {
         timeLeft = EventManager.getCountdownTime(from: event.unixTime)
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            self.timeLeft = EventManager.getCountdownTime(from: self.event.unixTime)
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.handleTimer()
+        }
+    }
+    
+    func handleTimer() {
+        timeLeft = EventManager.getCountdownTime(from: self.event.unixTime)
+        let timeDifference = event.unixTime - Date().timeIntervalSince1970
+        if timeDifference <= 0 {
+            isCountdownOver = true
+            timer?.invalidate()
+            timer = nil
         }
     }
     
