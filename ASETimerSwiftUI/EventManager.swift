@@ -24,17 +24,11 @@ class EventManager: ObservableObject {
     
     var isCountdownOver: Bool = false
     
-    var leftImageName: String {
-        "L\(Int.random(in: 1...7))"
-    }
+    var leftImageName: String = "L\(Int.random(in: 1...7))"
     
-    var middleImageName: String {
-        "M0"
-    }
+    var middleImageName: String = "M0"
     
-    var rightImageName: String {
-        "R\(Int.random(in: 1...7))"
-    }
+    var rightImageName: String = "R\(Int.random(in: 1...7))"
     
     @Published var timeLeft: Time
     
@@ -48,7 +42,7 @@ class EventManager: ObservableObject {
     }
     
     func handleTimer() {
-        timeLeft = EventManager.getCountdownTime(from: self.event.unixTime)
+        timeLeft = EventManager.getCountdownTime(from: event.unixTime)
         let timeDifference = event.unixTime - Date().timeIntervalSince1970
         if timeDifference <= 0 {
             isCountdownOver = true
