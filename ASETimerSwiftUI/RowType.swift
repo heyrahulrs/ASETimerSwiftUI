@@ -9,8 +9,8 @@
 import Foundation
 
 enum RowType: String {
-    case days = "Days"
-    case hours = "Hours"
-    case minutes = "Minutes"
-    case seconds = "Seconds"
+    case days
+    case hours
+    case minutes
+    case seconds
 }

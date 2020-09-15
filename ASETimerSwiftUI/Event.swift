@@ -9,14 +9,7 @@
 import Foundation
 
 struct Event {
-    
-    var heading, description: String
-    var unixTime: TimeInterval
-    
-    init() {
-        self.heading = "WWDC 2020"
-        self.description = "Join us for the first global,\nall-online WWDC20.\nStarts June 22."
-        self.unixTime = 1592845200
-    }
-    
+    let heading: String = "Apple Event"
+    let description: String = "Join us from Apple Park.\nSeptember 15, 2020, at 10 a.m. PDT."
+    let unixTime: TimeInterval = 1600189200
 }

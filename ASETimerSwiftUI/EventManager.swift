@@ -24,11 +24,7 @@ class EventManager: ObservableObject {
     
     var isCountdownOver: Bool = false
     
-    var leftImageName: String = "L\(Int.random(in: 1...7))"
-    
-    var middleImageName: String = "M0"
-    
-    var rightImageName: String = "R\(Int.random(in: 1...7))"
+    var imageName = "hero__d6adldydsqye_large"
     
     @Published var timeLeft: Time
     

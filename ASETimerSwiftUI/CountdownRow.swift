@@ -21,9 +21,10 @@ struct CountdownRow: View {
             Text(text.rawValue.uppercased())
                 .fontWeight(.bold)
                 .font(.caption)
-                .foregroundColor(.secondary)
+                .opacity(0.7)
         }
     }
+    
 }
 
 struct CountdownRow_Previews: PreviewProvider {

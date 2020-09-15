@@ -14,45 +14,33 @@ struct ContentView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                self.body(for: geometry.size)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.black)
-            .edgesIgnoringSafeArea(.all)
+            body(for: geometry.size)
+                .foregroundColor(
+                    Color(red: 0.11,
+                          green: 0.20,
+                          blue: 0.42)
+                )
+                .frame(maxWidth: .infinity,
+                       maxHeight: .infinity)
+                .background(
+                    Color(red: 0.96,
+                          green: 0.96,
+                          blue: 0.96)
+                )
+                .edgesIgnoringSafeArea(.all)
+                .statusBar(hidden: true)
         }
     }
     
     func body(for size: CGSize) -> some View {
         VStack(spacing: 12.0) {
-            HStack(alignment: .bottom) {
-                Image(eventManager.leftImageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(
-                        width: min((size.width / 3.0) + 64.0, 300.0),
-                        height: min((size.width / 3.0) + 64.0,  300.0)
-                    )
-                    .scaleEffect(0.9)
-                    .offset(x: 28)
-                Image(eventManager.middleImageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(
-                        width: min((size.width / 3.0) + 64.0, 300.0),
-                        height: min((size.width / 3.0) + 64.0, 300.0)
-                    )
-                    .scaleEffect(1.1)
-                Image(eventManager.rightImageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(
-                        width: min((size.width / 3.0) + 64.0, 300.0),
-                        height: min((size.width / 3.0) + 64.0, 300.0)
-                    )
-                    .scaleEffect(0.9)
-                    .offset(x: -28)
-            }
+            Image(eventManager.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(
+                    width: min((size.width / 3.0) + 64.0, 300.0),
+                    height: min((size.width / 3.0) + 64.0, 300.0)
+                )
             Spacer()
                 .frame(height: 16.0)
             Text(eventManager.eventHeading)
@@ -68,9 +56,13 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let eventManager = EventManager()
-        return ContentView(eventManager: eventManager)
-            .colorScheme(.dark)
-            .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
-            .previewDisplayName("iPhone 11 Pro")
+        return Group {
+            ContentView(eventManager: eventManager)
+                .previewDevice("iPhone 11 Pro")
+            ContentView(eventManager: eventManager)
+                .previewDevice("iPhone 11 Pro Max")
+            ContentView(eventManager: eventManager)
+                .previewDevice("iPhone SE (2nd generation)")
+        }
     }
 }
