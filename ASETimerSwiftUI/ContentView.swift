@@ -11,52 +11,73 @@ import SwiftUI
 struct ContentView: View {
     
     var eventManager: EventManager
-    
+
+    var gradient: Gradient {
+        Gradient(
+            colors: [
+                Color(red: 0.89, green: 0.45, blue: 0.19),
+                Color(red: 0.98, green: 0.85, blue: 0.45)
+            ]
+        )
+    }
+
+    var overlay: some View {
+        LinearGradient(gradient: gradient,
+                       startPoint: .top, endPoint: .bottom)
+        .mask(
+            Text(eventManager.eventHeading)
+                .font(.system(size: 44.0, weight: .bold))
+        )
+    }
+
     var body: some View {
         GeometryReader { geometry in
-            body(for: geometry.size)
-                .foregroundColor(
-                    Color(red: 0.11,
-                          green: 0.20,
-                          blue: 0.42)
-                )
-                .frame(maxWidth: .infinity,
-                       maxHeight: .infinity)
-                .background(
-                    Color(red: 0.96,
-                          green: 0.96,
-                          blue: 0.96)
-                )
-                .edgesIgnoringSafeArea(.all)
-                .statusBar(hidden: true)
+            ZStack(alignment: .bottom) {
+                VStack(spacing: 12.0) {
+                    Image(eventManager.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: geometry.size.height * 0.7)
+                    Spacer()
+                }
+                VStack(spacing: 12.0) {
+                    
+                    Text(eventManager.eventHeading)
+                        .font(.system(size: 44.0, weight: .bold))
+                        .overlay(overlay)
+                    Text(eventManager.eventDescription)
+                        .multilineTextAlignment(.center)
+                    CountdownView(eventManager: eventManager)
+                }
+                .layoutPriority(1)
+                .padding(.bottom, geometry.size.height * 0.14)
+            }
+            .frame(width: geometry.size.width,
+                   height: geometry.size.height,
+                   alignment: .center)
         }
+        .foregroundColor(Color(red: 0.98, green: 0.85, blue: 0.45))
+        .frame(maxWidth: .infinity,
+               maxHeight: .infinity,
+               alignment: .center)
+        .background(
+            Color(red: 0.04,
+                  green: 0.07,
+                  blue: 0.13)
+//            Color(red: 0.03,
+//                  green: 0.06,
+//                  blue: 0.11)
+        )
+        .edgesIgnoringSafeArea(.all)
+        .statusBar(hidden: true)
     }
-    
-    func body(for size: CGSize) -> some View {
-        VStack(spacing: 12.0) {
-            Image(eventManager.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(
-                    width: min((size.width / 3.0) + 64.0, 300.0),
-                    height: min((size.width / 3.0) + 64.0, 300.0)
-                )
-            Spacer()
-                .frame(height: 16.0)
-            Text(eventManager.eventHeading)
-                .font(.system(size: 44.0, weight: .heavy))
-            Text(eventManager.eventDescription)
-                .multilineTextAlignment(.center)
-            CountdownView(eventManager: eventManager)
-        }
-    }
-    
+
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let eventManager = EventManager()
     static var previews: some View {
-        let eventManager = EventManager()
-        return Group {
+        Group {
             ContentView(eventManager: eventManager)
                 .previewDevice("iPhone 11 Pro")
             ContentView(eventManager: eventManager)

@@ -3,10 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		208BA80D252D9567003EC6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80C252D9567003EC6FF /* WidgetKit.framework */; platformFilter = ios; };
+		208BA80F252D9567003EC6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80E252D9567003EC6FF /* SwiftUI.framework */; };
+		208BA812252D9567003EC6FF /* ASETimer_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BA811252D9567003EC6FF /* ASETimer_Widget.swift */; };
+		208BA814252D956B003EC6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208BA813252D956B003EC6FF /* Assets.xcassets */; };
+		208BA818252D956B003EC6FF /* ASETimer-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 208BA80A252D9567003EC6FF /* ASETimer-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		208BA820252D95B7003EC6FF /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7E0A824824EAE00966704 /* EventManager.swift */; };
+		208BA821252D95B7003EC6FF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38ADF2318DC83001BB042 /* Event.swift */; };
 		20C4C35622F833D00011C0B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4C35522F833D00011C0B0 /* AppDelegate.swift */; };
 		20C4C35822F833D00011C0B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4C35722F833D00011C0B0 /* SceneDelegate.swift */; };
 		20C4C35A22F833D00011C0B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4C35922F833D00011C0B0 /* ContentView.swift */; };
@@ -21,7 +28,38 @@
 		20F7E0A924824EAE00966704 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7E0A824824EAE00966704 /* EventManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		208BA816252D956B003EC6FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20C4C34A22F833D00011C0B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 208BA809252D9567003EC6FF;
+			remoteInfo = "ASETimer-WidgetExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		208BA81A252D956B003EC6FF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				208BA818252D956B003EC6FF /* ASETimer-WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		208BA80A252D9567003EC6FF /* ASETimer-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ASETimer-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		208BA80C252D9567003EC6FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		208BA80E252D9567003EC6FF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		208BA811252D9567003EC6FF /* ASETimer_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASETimer_Widget.swift; sourceTree = "<group>"; };
+		208BA813252D956B003EC6FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		208BA815252D956B003EC6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		208BA819252D956B003EC6FF /* ASETimer-WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ASETimer-WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		20C4C35222F833D00011C0B0 /* ASE Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ASE Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C4C35522F833D00011C0B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20C4C35722F833D00011C0B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +78,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		208BA807252D9567003EC6FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				208BA80F252D9567003EC6FF /* SwiftUI.framework in Frameworks */,
+				208BA80D252D9567003EC6FF /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20C4C34F22F833D00011C0B0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,10 +97,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		208BA80B252D9567003EC6FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				208BA80C252D9567003EC6FF /* WidgetKit.framework */,
+				208BA80E252D9567003EC6FF /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		208BA810252D9567003EC6FF /* ASETimer-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				208BA811252D9567003EC6FF /* ASETimer_Widget.swift */,
+				208BA813252D956B003EC6FF /* Assets.xcassets */,
+				208BA815252D956B003EC6FF /* Info.plist */,
+			);
+			path = "ASETimer-Widget";
+			sourceTree = "<group>";
+		};
 		20C4C34922F833D00011C0B0 = {
 			isa = PBXGroup;
 			children = (
+				208BA819252D956B003EC6FF /* ASETimer-WidgetExtension.entitlements */,
 				20C4C35422F833D00011C0B0 /* ASETimerSwiftUI */,
+				208BA810252D9567003EC6FF /* ASETimer-Widget */,
+				208BA80B252D9567003EC6FF /* Frameworks */,
 				20C4C35322F833D00011C0B0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				20C4C35222F833D00011C0B0 /* ASE Timer.app */,
+				208BA80A252D9567003EC6FF /* ASETimer-WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +168,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		208BA809252D9567003EC6FF /* ASETimer-WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 208BA81D252D956B003EC6FF /* Build configuration list for PBXNativeTarget "ASETimer-WidgetExtension" */;
+			buildPhases = (
+				208BA806252D9567003EC6FF /* Sources */,
+				208BA807252D9567003EC6FF /* Frameworks */,
+				208BA808252D9567003EC6FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ASETimer-WidgetExtension";
+			productName = "ASETimer-WidgetExtension";
+			productReference = 208BA80A252D9567003EC6FF /* ASETimer-WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		20C4C35122F833D00011C0B0 /* ASETimerSwiftUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20C4C36622F833D10011C0B0 /* Build configuration list for PBXNativeTarget "ASETimerSwiftUI" */;
@@ -105,10 +192,12 @@
 				20C4C34E22F833D00011C0B0 /* Sources */,
 				20C4C34F22F833D00011C0B0 /* Frameworks */,
 				20C4C35022F833D00011C0B0 /* Resources */,
+				208BA81A252D956B003EC6FF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				208BA817252D956B003EC6FF /* PBXTargetDependency */,
 			);
 			name = ASETimerSwiftUI;
 			productName = ASETimerSwiftUI;
@@ -121,10 +210,13 @@
 		20C4C34A22F833D00011C0B0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Rahul Sharma";
 				TargetAttributes = {
+					208BA809252D9567003EC6FF = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
 					20C4C35122F833D00011C0B0 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -144,11 +236,20 @@
 			projectRoot = "";
 			targets = (
 				20C4C35122F833D00011C0B0 /* ASETimerSwiftUI */,
+				208BA809252D9567003EC6FF /* ASETimer-WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		208BA808252D9567003EC6FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				208BA814252D956B003EC6FF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20C4C35022F833D00011C0B0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +263,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		208BA806252D9567003EC6FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				208BA820252D95B7003EC6FF /* EventManager.swift in Sources */,
+				208BA821252D95B7003EC6FF /* Event.swift in Sources */,
+				208BA812252D9567003EC6FF /* ASETimer_Widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20C4C34E22F833D00011C0B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,6 +291,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		208BA817252D956B003EC6FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 208BA809252D9567003EC6FF /* ASETimer-WidgetExtension */;
+			targetProxy = 208BA816252D956B003EC6FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		20C4C36022F833D10011C0B0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -192,6 +311,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		208BA81B252D956B003EC6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "ASETimer-WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 6R75J2CEEH;
+				INFOPLIST_FILE = "ASETimer-Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rahulrs0029.ASETimerSwiftUI.ASETimer-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		208BA81C252D956B003EC6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "ASETimer-WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 6R75J2CEEH;
+				INFOPLIST_FILE = "ASETimer-Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rahulrs0029.ASETimerSwiftUI.ASETimer-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		20C4C36422F833D10011C0B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -311,10 +480,11 @@
 		20C4C36722F833D10011C0B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ASETimerSwiftUI/ASETimerSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "ASETimerSwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
@@ -336,10 +506,11 @@
 		20C4C36822F833D10011C0B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ASETimerSwiftUI/ASETimerSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "ASETimerSwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
@@ -361,6 +532,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		208BA81D252D956B003EC6FF /* Build configuration list for PBXNativeTarget "ASETimer-WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				208BA81B252D956B003EC6FF /* Debug */,
+				208BA81C252D956B003EC6FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		20C4C34D22F833D00011C0B0 /* Build configuration list for PBXProject "ASETimerSwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

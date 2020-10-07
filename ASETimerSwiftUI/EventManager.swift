@@ -21,6 +21,10 @@ class EventManager: ObservableObject {
     var eventDescription: String {
         event.description
     }
+
+    var eventDate: Date {
+        Date(timeIntervalSince1970: event.unixTime)
+    }
     
     var isCountdownOver: Bool = false
     
