@@ -6,6 +6,7 @@
 //  Copyright © 2020 Rahul Sharma. All rights reserved.
 //
 
+#if canImport(WidgetKit)
 import WidgetKit
 import SwiftUI
 
@@ -163,3 +164,4 @@ struct ASETimer_Widget_Previews: PreviewProvider {
         }
     }
 }
+#endif

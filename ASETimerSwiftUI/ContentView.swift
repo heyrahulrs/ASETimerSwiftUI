@@ -37,11 +37,12 @@ struct ContentView: View {
                     Image(eventManager.imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(height: geometry.size.height * 0.7)
+                        .frame(width: geometry.size.width,
+                               height: geometry.size.height * 0.7)
                     Spacer()
                 }
                 VStack(spacing: 12.0) {
-                    
+                    Spacer()
                     Text(eventManager.eventHeading)
                         .font(.system(size: 44.0, weight: .bold))
                         .overlay(overlay)
@@ -61,12 +62,7 @@ struct ContentView: View {
                maxHeight: .infinity,
                alignment: .center)
         .background(
-            Color(red: 0.04,
-                  green: 0.07,
-                  blue: 0.13)
-//            Color(red: 0.03,
-//                  green: 0.06,
-//                  blue: 0.11)
+            Color("BackgroundColor")
         )
         .edgesIgnoringSafeArea(.all)
         .statusBar(hidden: true)
