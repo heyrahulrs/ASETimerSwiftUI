@@ -108,10 +108,12 @@ struct SystemMediumWidget : View {
             HStack {
                 if redactionReasons.isEmpty {
                     Text(entry.eventDate, style: .relative)
+                        .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(foregroundColor)
                 } else {
                     Text(entry.eventDate, style: .relative)
+                        .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(foregroundColor)
                         .background(
