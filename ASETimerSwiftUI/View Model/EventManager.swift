@@ -28,26 +28,26 @@ class EventManager: ObservableObject {
     
     var isCountdownOver: Bool = false
     
-    var imageName = "hero__d6adldydsqye_large"
+    var imageName: String { "hero" }
     
     @Published var timeLeft: Time
-    
-    var timer: Timer?
-    
+
     init() {
-        timeLeft = EventManager.getCountdownTime(from: event.unixTime)
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.handleTimer()
-        }
-    }
-    
-    func handleTimer() {
         timeLeft = EventManager.getCountdownTime(from: event.unixTime)
         let timeDifference = event.unixTime - Date().timeIntervalSince1970
         if timeDifference <= 0 {
             isCountdownOver = true
-            timer?.invalidate()
-            timer = nil
+            return
+        }
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: handleTimer)
+    }
+    
+    func handleTimer(timer: Timer) {
+        timeLeft = EventManager.getCountdownTime(from: event.unixTime)
+        let timeDifference = event.unixTime - Date().timeIntervalSince1970
+        if timeDifference <= 0 {
+            isCountdownOver = true
+            timer.invalidate()
         }
     }
     

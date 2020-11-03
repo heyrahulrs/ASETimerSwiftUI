@@ -29,109 +29,51 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     var date = Date()
-    var eventDate: Date = Date(timeIntervalSince1970: 1602608400)
+    var eventDate: Date = Date(timeIntervalSince1970: Event().unixTime)
+    var eventConcluded: Bool { eventDate < date }
 }
 
 struct ASETimer_WidgetEntryView : View {
     var entry: Provider.Entry
 
+    @Environment(\.redactionReasons) var redactionReasons
     @Environment(\.widgetFamily) var widgetFamily
 
+    var imageName: String {
+        widgetFamily == .systemSmall ? "widget-small" : "widget-medium"
+    }
+
     var body: some View {
-        switch widgetFamily {
-        case .systemSmall:
-            SystemSmallWidget(entry: entry)
-        case .systemMedium:
-            SystemMediumWidget(entry: entry)
-        default:
-            SystemSmallWidget(entry: entry)
+        Group {
+            Image(uiImage: UIImage(named: imageName)!)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .unredacted()
+                .background(Color.black)
         }
-    }
-}
-
-struct SystemSmallWidget : View {
-    var entry: Provider.Entry
-
-    @Environment(\.redactionReasons) var redactionReasons
-
-    var foregroundColor: Color {
-        Color(red: 0.98, green: 0.85, blue: 0.45)
-    }
-
-    var body: some View {
-        GeometryReader { geometry in
+        .overlay(
             VStack {
                 Spacer()
                 HStack {
-                    if redactionReasons.isEmpty {
-                        Text(entry.eventDate, style: .relative)
-                            .fontWeight(.bold)
-                            .foregroundColor(foregroundColor)
-                    } else {
-                        Text(entry.eventDate, style: .relative)
-                            .fontWeight(.bold)
-                            .foregroundColor(foregroundColor)
-                            .background(
-                                foregroundColor
-                                    .opacity(0.7)
-                                    .cornerRadius(4.0)
-                            )
+                    Group {
+                        if entry.eventConcluded {
+                            Text("Event Ended")
+                        } else {
+                            Text(entry.eventDate, style: .relative)
+                                .fontWeight(.bold)
+                        }
                     }
+                    .font(widgetFamily == .systemSmall ? .body : .title)
+                    .foregroundColor(.white)
+                    .background(
+                        Color.white
+                            .opacity(redactionReasons.isEmpty ? 0.0 : 0.7)
+                            .clipShape(ContainerRelativeShape())
+                    )
                     Spacer()
                 }
             }
             .padding()
-            .background(
-                Image("hero__d6adldydsqye_large")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .offset(x: geometry.size.width / 2 - 32)
-                    .unredacted()
-            )
-        }
-    }
-}
-
-struct SystemMediumWidget : View {
-
-    @Environment(\.redactionReasons) var redactionReasons
-
-    var entry: Provider.Entry
-
-    var foregroundColor: Color {
-        Color(red: 0.98, green: 0.85, blue: 0.45)
-    }
-
-    var body: some View {
-        VStack(spacing: 0.0) {
-            Spacer()
-            HStack {
-                if redactionReasons.isEmpty {
-                    Text(entry.eventDate, style: .relative)
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(foregroundColor)
-                } else {
-                    Text(entry.eventDate, style: .relative)
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(foregroundColor)
-                        .background(
-                            foregroundColor
-                                .opacity(0.7)
-                                .cornerRadius(4.0)
-                        )
-                }
-                Spacer()
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .padding()
-        .background(
-            Image("hero__d6adldydsqye_large")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .unredacted()
         )
     }
 }
@@ -145,7 +87,7 @@ struct ASETimer_Widget: Widget {
             ASETimer_WidgetEntryView(entry: entry)
         }
         .configurationDisplayName("ASE Timer")
-        .description("Countdown for Apple Event October 2020")
+        .description("Countdown for Apple Event November 2020")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

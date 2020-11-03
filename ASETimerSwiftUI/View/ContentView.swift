@@ -12,72 +12,50 @@ struct ContentView: View {
     
     var eventManager: EventManager
 
-    var gradient: Gradient {
-        Gradient(
-            colors: [
-                Color(red: 0.89, green: 0.45, blue: 0.19),
-                Color(red: 0.98, green: 0.85, blue: 0.45)
-            ]
-        )
-    }
-
-    var overlay: some View {
-        LinearGradient(gradient: gradient,
-                       startPoint: .top, endPoint: .bottom)
-        .mask(
-            Text(eventManager.eventHeading)
-                .font(.system(size: 44.0, weight: .bold))
-        )
-    }
-
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .bottom) {
+                Image(eventManager.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: geometry.size.height)
+                    .edgesIgnoringSafeArea(.all)
                 VStack(spacing: 12.0) {
-                    Image(eventManager.imageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: geometry.size.width,
-                               height: geometry.size.height * 0.7)
-                    Spacer()
-                }
-                VStack(spacing: 12.0) {
-                    Spacer()
+                    Spacer(minLength: 0.0)
                     Text(eventManager.eventHeading)
                         .font(.system(size: 44.0, weight: .bold))
-                        .overlay(overlay)
                     Text(eventManager.eventDescription)
                         .multilineTextAlignment(.center)
                     CountdownView(eventManager: eventManager)
                 }
                 .layoutPriority(1)
-                .padding(.bottom, geometry.size.height * 0.14)
+                .padding(.bottom, geometry.size.height * 0.10)
             }
             .frame(width: geometry.size.width,
                    height: geometry.size.height,
                    alignment: .center)
         }
-        .foregroundColor(Color(red: 0.98, green: 0.85, blue: 0.45))
+        .foregroundColor(Color.white)
         .frame(maxWidth: .infinity,
                maxHeight: .infinity,
                alignment: .center)
         .background(
-            Color("BackgroundColor")
+            Color(#colorLiteral(red: 0.03137254902, green: 0.003921568627, blue: 0.1921568627, alpha: 1))
+                .edgesIgnoringSafeArea(.all)
         )
-        .edgesIgnoringSafeArea(.all)
         .statusBar(hidden: true)
     }
 
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static let eventManager = EventManager()
     static var previews: some View {
-        Group {
+        let eventManager = EventManager()
+        return Group {
             ContentView(eventManager: eventManager)
-                .previewDevice("iPhone 11 Pro")
+                .previewDevice("iPhone 12 Pro")
             ContentView(eventManager: eventManager)
-                .previewDevice("iPhone 11 Pro Max")
+                .previewDevice("iPhone 12 mini")
             ContentView(eventManager: eventManager)
                 .previewDevice("iPhone SE (2nd generation)")
         }

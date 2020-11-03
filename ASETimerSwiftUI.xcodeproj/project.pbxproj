@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		204CBD5E2551108C008EBD1E /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38ADD2318DC6F001BB042 /* RowType.swift */; };
 		208BA80D252D9567003EC6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80C252D9567003EC6FF /* WidgetKit.framework */; platformFilter = ios; };
 		208BA80F252D9567003EC6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80E252D9567003EC6FF /* SwiftUI.framework */; };
 		208BA812252D9567003EC6FF /* ASETimer_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BA811252D9567003EC6FF /* ASETimer_Widget.swift */; };
 		208BA814252D956B003EC6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208BA813252D956B003EC6FF /* Assets.xcassets */; };
 		208BA818252D956B003EC6FF /* ASETimer-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 208BA80A252D9567003EC6FF /* ASETimer-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		208BA820252D95B7003EC6FF /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7E0A824824EAE00966704 /* EventManager.swift */; };
 		208BA821252D95B7003EC6FF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38ADF2318DC83001BB042 /* Event.swift */; };
 		20C4C35622F833D00011C0B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4C35522F833D00011C0B0 /* AppDelegate.swift */; };
 		20C4C35822F833D00011C0B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4C35722F833D00011C0B0 /* SceneDelegate.swift */; };
@@ -97,6 +97,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		204CBD5425511061008EBD1E /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				20F7E0A824824EAE00966704 /* EventManager.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		204CBD5525511068008EBD1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20E38ADF2318DC83001BB042 /* Event.swift */,
+				20E38ADD2318DC6F001BB042 /* RowType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		204CBD5625511071008EBD1E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20C4C35922F833D00011C0B0 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		204CBD5B2551107F008EBD1E /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				20E38AE12318DC9D001BB042 /* CountdownView.swift */,
+				20E38AE32318DD06001BB042 /* CountdownRow.swift */,
+				20E38AE52318DD29001BB042 /* SeparatorView.swift */,
+			);
+			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
 		208BA80B252D9567003EC6FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,13 +177,10 @@
 				20E38ADC2318DC36001BB042 /* ASETimerSwiftUI.entitlements */,
 				20C4C35522F833D00011C0B0 /* AppDelegate.swift */,
 				20C4C35722F833D00011C0B0 /* SceneDelegate.swift */,
-				20C4C35922F833D00011C0B0 /* ContentView.swift */,
-				20E38AE12318DC9D001BB042 /* CountdownView.swift */,
-				20E38AE32318DD06001BB042 /* CountdownRow.swift */,
-				20E38AE52318DD29001BB042 /* SeparatorView.swift */,
-				20E38ADF2318DC83001BB042 /* Event.swift */,
-				20F7E0A824824EAE00966704 /* EventManager.swift */,
-				20E38ADD2318DC6F001BB042 /* RowType.swift */,
+				204CBD5525511068008EBD1E /* Model */,
+				204CBD5625511071008EBD1E /* View */,
+				204CBD5425511061008EBD1E /* View Model */,
+				204CBD5B2551107F008EBD1E /* Supporting Views */,
 				20C4C35B22F833D10011C0B0 /* Assets.xcassets */,
 				20C4C36022F833D10011C0B0 /* LaunchScreen.storyboard */,
 				20C4C36322F833D10011C0B0 /* Info.plist */,
@@ -267,8 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				208BA820252D95B7003EC6FF /* EventManager.swift in Sources */,
 				208BA821252D95B7003EC6FF /* Event.swift in Sources */,
+				204CBD5E2551108C008EBD1E /* RowType.swift in Sources */,
 				208BA812252D9567003EC6FF /* ASETimer_Widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,17 +350,18 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "ASETimer-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				INFOPLIST_FILE = "ASETimer-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rahulrs0029.ASETimerSwiftUI.ASETimer-Widget";
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = maccatalyst.com.rahulrs0029.ASETimerSwiftUI.ASETimer-Widget;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "maccatalyst.com.rahulrs0029.ASETimerSwiftUI.ASETimer-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
@@ -344,17 +377,18 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "ASETimer-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				INFOPLIST_FILE = "ASETimer-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rahulrs0029.ASETimerSwiftUI.ASETimer-Widget";
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = maccatalyst.com.rahulrs0029.ASETimerSwiftUI.ASETimer-Widget;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "maccatalyst.com.rahulrs0029.ASETimerSwiftUI.ASETimer-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
@@ -486,7 +520,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ASETimerSwiftUI/ASETimerSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "ASETimerSwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
@@ -512,7 +546,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ASETimerSwiftUI/ASETimerSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "ASETimerSwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
