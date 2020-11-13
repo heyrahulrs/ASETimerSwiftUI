@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		204CBD5E2551108C008EBD1E /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38ADD2318DC6F001BB042 /* RowType.swift */; };
-		208BA80D252D9567003EC6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80C252D9567003EC6FF /* WidgetKit.framework */; platformFilter = ios; };
+		208BA80D252D9567003EC6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80C252D9567003EC6FF /* WidgetKit.framework */; };
 		208BA80F252D9567003EC6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80E252D9567003EC6FF /* SwiftUI.framework */; };
 		208BA812252D9567003EC6FF /* ASETimer_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208BA811252D9567003EC6FF /* ASETimer_Widget.swift */; };
 		208BA814252D956B003EC6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208BA813252D956B003EC6FF /* Assets.xcassets */; };
@@ -350,11 +350,11 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "ASETimer-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				INFOPLIST_FILE = "ASETimer-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.5;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,7 +366,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -377,11 +377,11 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "ASETimer-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				INFOPLIST_FILE = "ASETimer-Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.5;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -393,7 +393,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
@@ -520,7 +520,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ASETimerSwiftUI/ASETimerSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "ASETimerSwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
@@ -546,7 +546,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ASETimerSwiftUI/ASETimerSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "ASETimerSwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6R75J2CEEH;

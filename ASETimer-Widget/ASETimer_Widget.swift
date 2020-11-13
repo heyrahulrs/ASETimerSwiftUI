@@ -6,7 +6,6 @@
 //  Copyright © 2020 Rahul Sharma. All rights reserved.
 //
 
-#if canImport(WidgetKit)
 import WidgetKit
 import SwiftUI
 
@@ -22,8 +21,13 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let entry = SimpleEntry()
-        let timeline = Timeline(entries: [entry], policy: .never)
-        completion(timeline)
+        if entry.eventConcluded {
+            let timeline = Timeline(entries: [entry], policy: .never)
+            completion(timeline)
+        } else {
+            let timeline = Timeline(entries: [entry], policy: .after(entry.eventDate))
+            completion(timeline)
+        }
     }
 }
 
@@ -43,6 +47,26 @@ struct ASETimer_WidgetEntryView : View {
         widgetFamily == .systemSmall ? "widget-small" : "widget-medium"
     }
 
+    var overlay: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Group {
+                    if entry.eventConcluded {
+                        Text("Event Ended")
+                    } else {
+                        Text(entry.eventDate, style: .relative)
+                            .fontWeight(.bold)
+                    }
+                }
+                .font(widgetFamily == .systemSmall ? .body : .title)
+                .foregroundColor(.white)
+                Spacer()
+            }
+        }
+        .padding()
+    }
+
     var body: some View {
         Group {
             Image(uiImage: UIImage(named: imageName)!)
@@ -51,31 +75,9 @@ struct ASETimer_WidgetEntryView : View {
                 .unredacted()
                 .background(Color.black)
         }
-        .overlay(
-            VStack {
-                Spacer()
-                HStack {
-                    Group {
-                        if entry.eventConcluded {
-                            Text("Event Ended")
-                        } else {
-                            Text(entry.eventDate, style: .relative)
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .font(widgetFamily == .systemSmall ? .body : .title)
-                    .foregroundColor(.white)
-                    .background(
-                        Color.white
-                            .opacity(redactionReasons.isEmpty ? 0.0 : 0.7)
-                            .clipShape(ContainerRelativeShape())
-                    )
-                    Spacer()
-                }
-            }
-            .padding()
-        )
+        .overlay(overlay)
     }
+
 }
 
 @main
@@ -100,12 +102,11 @@ struct ASETimer_Widget_Previews: PreviewProvider {
             ASETimer_WidgetEntryView(entry: SimpleEntry())
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
             ASETimer_WidgetEntryView(entry: SimpleEntry())
+                .redacted(reason: .placeholder)
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-                .redacted(reason: .placeholder)
             ASETimer_WidgetEntryView(entry: SimpleEntry())
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
                 .redacted(reason: .placeholder)
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }
 }
-#endif
