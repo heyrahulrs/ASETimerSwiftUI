@@ -24,10 +24,8 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
             }
             VStack(spacing: 36.0) {
-                Image(eventManager.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(height: 360.0)
+                AspectFillImage(eventManager.imageName)
+                    .frame(width: 360.0, height: 360.0)
                 VStack(spacing: 12.0) {
                     Text(eventManager.eventHeading)
                         .font(.system(size: 44.0, weight: .bold))
