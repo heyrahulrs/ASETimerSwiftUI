@@ -16,7 +16,7 @@ struct CountdownRow: View {
     var body: some View {
         VStack {
             Text(String(format: "%02d", number))
-                .fontWeight(.black)
+                .fontWeight(.heavy)
                 .font(Font.system(size: 38.0).monospacedDigit())
             Text(text.rawValue.uppercased())
                 .fontWeight(.bold)
