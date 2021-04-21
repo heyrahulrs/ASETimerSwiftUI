@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2023C9C42626C16E00413C51 /* AspectFillImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023C9C32626C16E00413C51 /* AspectFillImage.swift */; };
+		2027F8CF262FF53300ED7A3B /* ASE Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027F8CE262FF53300ED7A3B /* ASE Timer.swift */; };
 		204CBD5E2551108C008EBD1E /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38ADD2318DC6F001BB042 /* RowType.swift */; };
 		208BA80D252D9567003EC6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80C252D9567003EC6FF /* WidgetKit.framework */; };
 		208BA80F252D9567003EC6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80E252D9567003EC6FF /* SwiftUI.framework */; };
@@ -15,12 +16,9 @@
 		208BA814252D956B003EC6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208BA813252D956B003EC6FF /* Assets.xcassets */; };
 		208BA818252D956B003EC6FF /* ASETimer-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 208BA80A252D9567003EC6FF /* ASETimer-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		208BA821252D95B7003EC6FF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38ADF2318DC83001BB042 /* Event.swift */; };
-		20C4C35622F833D00011C0B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4C35522F833D00011C0B0 /* AppDelegate.swift */; };
-		20C4C35822F833D00011C0B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4C35722F833D00011C0B0 /* SceneDelegate.swift */; };
 		20C4C35A22F833D00011C0B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4C35922F833D00011C0B0 /* ContentView.swift */; };
 		20C4C35C22F833D10011C0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C4C35B22F833D10011C0B0 /* Assets.xcassets */; };
 		20C4C35F22F833D10011C0B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C4C35E22F833D10011C0B0 /* Preview Assets.xcassets */; };
-		20C4C36222F833D10011C0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C4C36022F833D10011C0B0 /* LaunchScreen.storyboard */; };
 		20E38ADE2318DC6F001BB042 /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38ADD2318DC6F001BB042 /* RowType.swift */; };
 		20E38AE02318DC83001BB042 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38ADF2318DC83001BB042 /* Event.swift */; };
 		20E38AE22318DC9D001BB042 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38AE12318DC9D001BB042 /* CountdownView.swift */; };
@@ -55,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		2023C9C32626C16E00413C51 /* AspectFillImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectFillImage.swift; sourceTree = "<group>"; };
+		2027F8CE262FF53300ED7A3B /* ASE Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASE Timer.swift"; sourceTree = "<group>"; };
 		208BA80A252D9567003EC6FF /* ASETimer-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ASETimer-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		208BA80C252D9567003EC6FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		208BA80E252D9567003EC6FF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -63,12 +62,9 @@
 		208BA815252D956B003EC6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		208BA819252D956B003EC6FF /* ASETimer-WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ASETimer-WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		20C4C35222F833D00011C0B0 /* ASE Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ASE Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		20C4C35522F833D00011C0B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20C4C35722F833D00011C0B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		20C4C35922F833D00011C0B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		20C4C35B22F833D10011C0B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20C4C35E22F833D10011C0B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		20C4C36122F833D10011C0B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20C4C36322F833D10011C0B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20E38ADC2318DC36001BB042 /* ASETimerSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ASETimerSwiftUI.entitlements; sourceTree = "<group>"; };
 		20E38ADD2318DC6F001BB042 /* RowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowType.swift; sourceTree = "<group>"; };
@@ -178,14 +174,12 @@
 			isa = PBXGroup;
 			children = (
 				20E38ADC2318DC36001BB042 /* ASETimerSwiftUI.entitlements */,
-				20C4C35522F833D00011C0B0 /* AppDelegate.swift */,
-				20C4C35722F833D00011C0B0 /* SceneDelegate.swift */,
+				2027F8CE262FF53300ED7A3B /* ASE Timer.swift */,
 				204CBD5525511068008EBD1E /* Model */,
 				204CBD5625511071008EBD1E /* View */,
 				204CBD5425511061008EBD1E /* View Model */,
 				204CBD5B2551107F008EBD1E /* Supporting Views */,
 				20C4C35B22F833D10011C0B0 /* Assets.xcassets */,
-				20C4C36022F833D10011C0B0 /* LaunchScreen.storyboard */,
 				20C4C36322F833D10011C0B0 /* Info.plist */,
 				20C4C35D22F833D10011C0B0 /* Preview Content */,
 			);
@@ -289,7 +283,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C4C36222F833D10011C0B0 /* LaunchScreen.storyboard in Resources */,
 				20C4C35F22F833D10011C0B0 /* Preview Assets.xcassets in Resources */,
 				20C4C35C22F833D10011C0B0 /* Assets.xcassets in Resources */,
 			);
@@ -316,8 +309,7 @@
 				20E38AE22318DC9D001BB042 /* CountdownView.swift in Sources */,
 				20E38AE42318DD06001BB042 /* CountdownRow.swift in Sources */,
 				20E38AE62318DD29001BB042 /* SeparatorView.swift in Sources */,
-				20C4C35622F833D00011C0B0 /* AppDelegate.swift in Sources */,
-				20C4C35822F833D00011C0B0 /* SceneDelegate.swift in Sources */,
+				2027F8CF262FF53300ED7A3B /* ASE Timer.swift in Sources */,
 				20E38ADE2318DC6F001BB042 /* RowType.swift in Sources */,
 				20C4C35A22F833D00011C0B0 /* ContentView.swift in Sources */,
 				2023C9C42626C16E00413C51 /* AspectFillImage.swift in Sources */,
@@ -335,17 +327,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		20C4C36022F833D10011C0B0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				20C4C36122F833D10011C0B0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		208BA81B252D956B003EC6FF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -356,7 +337,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = "ASETimer-Widget/Info.plist";
@@ -389,7 +370,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = "ASETimer-Widget/Info.plist";
@@ -538,13 +519,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "ASETimerSwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ASETimerSwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,8 +536,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -568,13 +551,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "ASETimerSwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ASETimerSwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -584,8 +568,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
