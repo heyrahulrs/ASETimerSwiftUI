@@ -33,6 +33,6 @@ struct AspectFillImage: View {
 
 struct AspectFillImage_Previews: PreviewProvider {
     static var previews: some View {
-        AspectFillImage("hero")
+        AspectFillImage("girl")
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 struct Event {
-    let heading: String = "Apple Event"
-    let description: String = "Watch on April 20 at 10:00 a.m. PDT."
-    let unixTime: TimeInterval = 1618938000
+    let heading: String = "WWDC 2021"
+    let description: String = "Get ready for an all-online\nexperience. Coming June 7."
+    let unixTime: TimeInterval = 1623085200
 }

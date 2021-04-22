@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2023C9C42626C16E00413C51 /* AspectFillImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023C9C32626C16E00413C51 /* AspectFillImage.swift */; };
 		2027F8CF262FF53300ED7A3B /* ASE Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027F8CE262FF53300ED7A3B /* ASE Timer.swift */; };
+		2027F8D0262FFE1C00ED7A3B /* AspectFillImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023C9C32626C16E00413C51 /* AspectFillImage.swift */; };
 		204CBD5E2551108C008EBD1E /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38ADD2318DC6F001BB042 /* RowType.swift */; };
 		208BA80D252D9567003EC6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80C252D9567003EC6FF /* WidgetKit.framework */; };
 		208BA80F252D9567003EC6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80E252D9567003EC6FF /* SwiftUI.framework */; };
@@ -143,6 +144,7 @@
 		208BA810252D9567003EC6FF /* ASETimer-Widget */ = {
 			isa = PBXGroup;
 			children = (
+				208BA819252D956B003EC6FF /* ASETimer-WidgetExtension.entitlements */,
 				208BA811252D9567003EC6FF /* ASETimer_Widget.swift */,
 				208BA813252D956B003EC6FF /* Assets.xcassets */,
 				208BA815252D956B003EC6FF /* Info.plist */,
@@ -153,7 +155,6 @@
 		20C4C34922F833D00011C0B0 = {
 			isa = PBXGroup;
 			children = (
-				208BA819252D956B003EC6FF /* ASETimer-WidgetExtension.entitlements */,
 				20C4C35422F833D00011C0B0 /* ASETimerSwiftUI */,
 				208BA810252D9567003EC6FF /* ASETimer-Widget */,
 				208BA80B252D9567003EC6FF /* Frameworks */,
@@ -297,6 +298,7 @@
 			files = (
 				208BA821252D95B7003EC6FF /* Event.swift in Sources */,
 				204CBD5E2551108C008EBD1E /* RowType.swift in Sources */,
+				2027F8D0262FFE1C00ED7A3B /* AspectFillImage.swift in Sources */,
 				208BA812252D9567003EC6FF /* ASETimer_Widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,7 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = "ASETimer-WidgetExtension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "ASETimer-Widget/ASETimer-WidgetExtension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -366,7 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = "ASETimer-WidgetExtension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "ASETimer-Widget/ASETimer-WidgetExtension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -526,7 +528,7 @@
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ASETimerSwiftUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,7 +560,7 @@
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ASETimerSwiftUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

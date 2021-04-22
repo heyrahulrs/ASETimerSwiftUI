@@ -10,22 +10,46 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @Environment(\.colorScheme) var colorScheme
-    
     var eventManager: EventManager
+
+    var gradient: some View {
+        LinearGradient(
+            gradient: Gradient(
+                colors: [Color(red: 0.04, green: 0.04, blue: 0.03), Color.clear]
+            ),
+            startPoint: .top,
+            endPoint: .bottom
+        )
+        .frame(height: 50.0)
+    }
+
+    var gradientInverted: some View {
+        LinearGradient(
+            gradient: Gradient(
+                colors: [Color.clear, Color(red: 0.04, green: 0.04, blue: 0.03)]
+            ),
+            startPoint: .top,
+            endPoint: .bottom
+        )
+        .frame(height: 50.0)
+    }
 
     var body: some View {
         ZStack {
-            if colorScheme == .dark {
-                Color(red: 0.04, green: 0.04, blue: 0.03)
-                    .edgesIgnoringSafeArea(.all)
-            } else {
-                Color(red: 0.96, green: 0.96, blue: 0.97)
-                    .edgesIgnoringSafeArea(.all)
-            }
+            Color(red: 0.04, green: 0.04, blue: 0.03)
             VStack(spacing: 36.0) {
-                AspectFillImage(eventManager.imageName)
-                    .frame(width: 360.0, height: 360.0)
+                Spacer(minLength: 0)
+                Image(eventManager.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 300.0)
+                    .overlay(
+                        VStack {
+                            gradient
+                            Spacer()
+                            gradientInverted
+                        }
+                    )
                 VStack(spacing: 12.0) {
                     Text(eventManager.eventHeading)
                         .font(.system(size: 44.0, weight: .bold))
@@ -35,9 +59,13 @@ struct ContentView: View {
                 }
                 .layoutPriority(1)
                 .padding(.bottom)
+                Spacer(minLength: 0)
             }
-            .foregroundColor(.primary)
+            .foregroundColor(.white)
+            .offset(y: -28.0)
         }
+        .ignoresSafeArea()
+        .statusBar(hidden: true)
     }
 
 }
@@ -49,12 +77,9 @@ struct ContentView_Previews: PreviewProvider {
             ContentView(eventManager: eventManager)
                 .previewDevice("iPhone 12 Pro")
             ContentView(eventManager: eventManager)
-                .previewDevice("iPhone 12 Pro")
-                .colorScheme(.dark)
-//            ContentView(eventManager: eventManager)
-//                .previewDevice("iPhone 12 mini")
-//            ContentView(eventManager: eventManager)
-//                .previewDevice("iPhone SE (2nd generation)")
+                .previewDevice("iPhone 12 mini")
+            ContentView(eventManager: eventManager)
+                .previewDevice("iPhone SE (2nd generation)")
         }
     }
 }

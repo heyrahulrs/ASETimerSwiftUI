@@ -54,8 +54,7 @@ struct ASETimer_WidgetEntryView : View {
     @Environment(\.widgetFamily) var widgetFamily
 
     var imageName: String {
-//        widgetFamily == .systemSmall ? "widget-small" : "widget-medium"
-        "hero"
+        ["girl", "guy", "boy"].randomElement()!
     }
 
     var text: some View {
@@ -71,7 +70,7 @@ struct ASETimer_WidgetEntryView : View {
                     }
                 }
                 .font(widgetFamily == .systemSmall ? .body : .title)
-                .foregroundColor(.primary)
+                .foregroundColor(.white)
                 Spacer()
             }
         }
@@ -79,23 +78,17 @@ struct ASETimer_WidgetEntryView : View {
     }
 
     var body: some View {
-        VStack {
-            Image(uiImage: UIImage(named: imageName)!)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .unredacted()
-                .offset(y: 4.0)
-            Spacer(minLength: 0.0)
-            Group {
-                if entry.eventConcluded {
-                    Text("Event Ended")
-                } else {
-                    Text(entry.eventDate, style: .relative)
-                        .fontWeight(.bold)
-                }
+        ZStack {
+            GeometryReader { geometry in
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geometry.size.width,
+                           height: geometry.size.height)
+                    .clipped()
+                    .unredacted()
             }
-            .font(widgetFamily == .systemSmall ? .body : .title)
-            .padding()
+            text
         }
     }
 
@@ -112,7 +105,7 @@ struct ASETimer_Widget: Widget {
             ASETimer_WidgetEntryView(entry: entry)
         }
         .configurationDisplayName("ASE Timer")
-        .description("Countdown for Apple Event, April 2021")
+        .description("Countdown for WWDC 2021 Keynote")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

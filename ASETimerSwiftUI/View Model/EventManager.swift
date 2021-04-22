@@ -28,7 +28,9 @@ class EventManager: ObservableObject {
     
     var isCountdownOver: Bool = false
     
-    var imageName: String { "hero" }
+    var imageName: String {
+        ["girl", "boy", "guy"].randomElement()!
+    }
     
     @Published var timeLeft: Time
 
