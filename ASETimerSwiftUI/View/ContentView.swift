@@ -43,6 +43,7 @@ struct ContentView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 300.0)
+                    .clipped()
                     .overlay(
                         VStack {
                             gradient
