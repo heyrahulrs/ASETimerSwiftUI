@@ -14,7 +14,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            Color(red: 0.04, green: 0.04, blue: 0.03)
+            Color.black
             VStack(spacing: 40.0) {
                 Spacer(minLength: 0)
                 Image(eventManager.imageName)
