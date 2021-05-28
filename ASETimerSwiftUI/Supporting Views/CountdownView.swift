@@ -21,16 +21,16 @@ struct CountdownView: View {
                 .padding(.horizontal, 18.0)
         } else {
             HStack(alignment: .top) {
-                CountdownRow(number: eventManager.timeLeft.days,
+                CountdownRow(number: eventManager.remainingTime.days,
                              text: .days)
                 SeparatorView()
-                CountdownRow(number: eventManager.timeLeft.hours,
+                CountdownRow(number: eventManager.remainingTime.hours,
                              text: .hours)
                 SeparatorView()
-                CountdownRow(number: eventManager.timeLeft.minutes,
+                CountdownRow(number: eventManager.remainingTime.minutes,
                              text: .minutes)
                 SeparatorView()
-                CountdownRow(number: eventManager.timeLeft.seconds,
+                CountdownRow(number: eventManager.remainingTime.seconds,
                              text: .seconds)
             }
         }

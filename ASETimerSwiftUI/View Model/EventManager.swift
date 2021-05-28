@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import Combine
 
 typealias Time = (days: Int, hours: Int, minutes: Int, seconds: Int)
 
 class EventManager: ObservableObject {
     
     private var event = Event()
-    
+
+    var timer: Cancellable?
+
     var eventHeading: String {
         event.heading
     }
@@ -32,34 +35,43 @@ class EventManager: ObservableObject {
         "hero"
     }
     
-    @Published var timeLeft: Time
+    @Published var remainingSeconds = 0
 
     init() {
-        timeLeft = EventManager.getCountdownTime(from: event.unixTime)
-        let timeDifference = event.unixTime - Date().timeIntervalSince1970
-        if timeDifference <= 0 {
-            isCountdownOver = true
-            return
+        updateRemainingSeconds()
+        if remainingSeconds <= 0 { endTimer(); return }
+        startTimer()
+    }
+
+    func startTimer() {
+        timer = Timer.publish(every: 0.1, on: .main, in: .default)
+            .autoconnect()
+            .sink { [self] _ in
+                if remainingSeconds <= 0 { endTimer(); return }
+                updateRemainingSeconds()
+            }
+    }
+
+    func updateRemainingSeconds() {
+        remainingSeconds = Int(eventDate.timeIntervalSinceNow)
+    }
+
+    func endTimer() {
+        isCountdownOver = true
+        if timer != nil {
+            timer?.cancel()
+            timer = nil
         }
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: handleTimer)
     }
-    
-    func handleTimer(timer: Timer) {
-        timeLeft = EventManager.getCountdownTime(from: event.unixTime)
-        let timeDifference = event.unixTime - Date().timeIntervalSince1970
-        if timeDifference <= 0 {
-            isCountdownOver = true
-            timer.invalidate()
-        }
+
+    var remainingTime: Time {
+        let remainingTime: Time = (
+            days: remainingSeconds / 86400,
+            hours: (remainingSeconds % 86400) / 3600,
+            minutes: (remainingSeconds % 3600) / 60,
+            seconds: (remainingSeconds % 3600) % 60
+        )
+        return remainingTime
     }
-    
-    static func getCountdownTime(from eventTime: Double) -> Time {
-        let secondsUntilEvent = eventTime - Date().timeIntervalSince1970
-        let days = Int(secondsUntilEvent / 86400)
-        let hours = Int(secondsUntilEvent.truncatingRemainder(dividingBy: 86400) / 3600)
-        let minutes = Int(secondsUntilEvent.truncatingRemainder(dividingBy: 3600) / 60)
-        let seconds = Int(secondsUntilEvent.truncatingRemainder(dividingBy: 60))
-        return (days, hours, minutes, seconds)
-    }
-    
+
 }
