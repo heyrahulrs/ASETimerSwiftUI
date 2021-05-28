@@ -29,7 +29,7 @@ class EventManager: ObservableObject {
         Date(timeIntervalSince1970: event.unixTime)
     }
     
-    var isCountdownOver: Bool = false
+    @Published var isCountdownOver: Bool = false
     
     var imageName: String {
         "hero"
