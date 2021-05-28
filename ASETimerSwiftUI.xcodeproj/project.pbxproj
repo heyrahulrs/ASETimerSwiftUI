@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2023C9C42626C16E00413C51 /* AspectFillImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023C9C32626C16E00413C51 /* AspectFillImage.swift */; };
 		2027F8CF262FF53300ED7A3B /* ASE Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027F8CE262FF53300ED7A3B /* ASE Timer.swift */; };
-		2027F8D0262FFE1C00ED7A3B /* AspectFillImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023C9C32626C16E00413C51 /* AspectFillImage.swift */; };
 		204CBD5E2551108C008EBD1E /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38ADD2318DC6F001BB042 /* RowType.swift */; };
 		208BA80D252D9567003EC6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80C252D9567003EC6FF /* WidgetKit.framework */; };
 		208BA80F252D9567003EC6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208BA80E252D9567003EC6FF /* SwiftUI.framework */; };
@@ -53,7 +51,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2023C9C32626C16E00413C51 /* AspectFillImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectFillImage.swift; sourceTree = "<group>"; };
 		2027F8CE262FF53300ED7A3B /* ASE Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ASE Timer.swift"; sourceTree = "<group>"; };
 		208BA80A252D9567003EC6FF /* ASETimer-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ASETimer-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		208BA80C252D9567003EC6FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -124,7 +121,6 @@
 		204CBD5B2551107F008EBD1E /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
-				2023C9C32626C16E00413C51 /* AspectFillImage.swift */,
 				20E38AE12318DC9D001BB042 /* CountdownView.swift */,
 				20E38AE32318DD06001BB042 /* CountdownRow.swift */,
 				20E38AE52318DD29001BB042 /* SeparatorView.swift */,
@@ -298,7 +294,6 @@
 			files = (
 				208BA821252D95B7003EC6FF /* Event.swift in Sources */,
 				204CBD5E2551108C008EBD1E /* RowType.swift in Sources */,
-				2027F8D0262FFE1C00ED7A3B /* AspectFillImage.swift in Sources */,
 				208BA812252D9567003EC6FF /* ASETimer_Widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +309,6 @@
 				2027F8CF262FF53300ED7A3B /* ASE Timer.swift in Sources */,
 				20E38ADE2318DC6F001BB042 /* RowType.swift in Sources */,
 				20C4C35A22F833D00011C0B0 /* ContentView.swift in Sources */,
-				2023C9C42626C16E00413C51 /* AspectFillImage.swift in Sources */,
 				20E38AE02318DC83001BB042 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
