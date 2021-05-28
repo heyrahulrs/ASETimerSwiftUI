@@ -21,9 +21,11 @@ struct CountdownView: View {
                 .padding(.horizontal, 18.0)
         } else {
             HStack(alignment: .top) {
-                CountdownRow(number: eventManager.remainingTime.days,
-                             text: .days)
-                SeparatorView()
+                if eventManager.remainingTime.days != 0 {
+                    CountdownRow(number: eventManager.remainingTime.days,
+                                 text: .days)
+                    SeparatorView()
+                }
                 CountdownRow(number: eventManager.remainingTime.hours,
                              text: .hours)
                 SeparatorView()
