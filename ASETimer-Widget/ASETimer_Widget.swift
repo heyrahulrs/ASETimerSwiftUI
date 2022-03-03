@@ -34,7 +34,8 @@ struct Provider: TimelineProvider {
             let timeline = Timeline(entries: [entry], policy: .never)
             completion(timeline)
         } else {
-            let timeline = Timeline(entries: [entry], policy: .after(entry.eventDate))
+            let timeline = Timeline(entries: [entry],
+                                    policy: .after(entry.eventDate))
             completion(timeline)
         }
     }
@@ -54,7 +55,7 @@ struct ASETimer_WidgetEntryView : View {
     @Environment(\.widgetFamily) var widgetFamily
 
     var imageName: String {
-        ["girl", "guy", "boy"].randomElement()!
+        "hero_widget"
     }
 
     var text: some View {
@@ -105,7 +106,7 @@ struct ASETimer_Widget: Widget {
             ASETimer_WidgetEntryView(entry: entry)
         }
         .configurationDisplayName("ASE Timer")
-        .description("Countdown for WWDC 2021 Keynote")
+        .description("Countdown for Apple Event March 2022 Keynote")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

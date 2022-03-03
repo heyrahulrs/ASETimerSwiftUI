@@ -13,31 +13,35 @@ struct ContentView: View {
     var eventManager: EventManager
 
     var body: some View {
-        ZStack {
-            Color.black
-            VStack(spacing: 40.0) {
-                Spacer(minLength: 0)
+        GeometryReader { proxy in
+            ZStack(alignment: .bottom){
+                Color.black
+                    .ignoresSafeArea()
                 Image(eventManager.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(height: 400.0)
-                    .offset(y: -84.0)
-                    .padding(.bottom, -84.0)
-                VStack(spacing: 12.0) {
-                    Text(eventManager.eventHeading)
-                        .font(.system(size: 44.0, weight: .bold))
-                    Text(eventManager.eventDescription)
-                        .multilineTextAlignment(.center)
-                    CountdownView(eventManager: eventManager)
+                    .padding()
+                VStack(spacing: 40.0) {
+                    Spacer(minLength: 0)
+                    VStack(spacing: 12.0) {
+                        Text(eventManager.eventHeading)
+                            .font(.system(size: 44.0, weight: .bold))
+                        Text(eventManager.eventDescription)
+                            .multilineTextAlignment(.center)
+                        CountdownView(eventManager: eventManager)
+                    }
+                    .layoutPriority(1)
+                    .padding(.bottom)
+                    Spacer(minLength: 0)
                 }
-                .layoutPriority(1)
-                .padding(.bottom)
-                Spacer(minLength: 0)
+                .foregroundColor(.white)
+                .frame(height: proxy.size.height / 2)
             }
-            .foregroundColor(.white)
+            .statusBar(hidden: true)
+            .frame(width: proxy.size.width,
+                   height: proxy.size.height,
+                   alignment: .bottom)
         }
-        .ignoresSafeArea()
-        .statusBar(hidden: true)
     }
 
 }
@@ -47,11 +51,11 @@ struct ContentView_Previews: PreviewProvider {
         let eventManager = EventManager()
         return Group {
             ContentView(eventManager: eventManager)
-                .previewDevice("iPhone 12 Pro")
-//            ContentView(eventManager: eventManager)
-//                .previewDevice("iPhone 12 mini")
-//            ContentView(eventManager: eventManager)
-//                .previewDevice("iPhone SE (2nd generation)")
+                .previewDevice("iPhone 13 Pro")
+            ContentView(eventManager: eventManager)
+                .previewDevice("iPhone 13 mini")
+            ContentView(eventManager: eventManager)
+                .previewDevice("iPhone SE (2nd generation)")
         }
     }
 }
