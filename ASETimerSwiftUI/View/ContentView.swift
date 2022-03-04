@@ -25,9 +25,10 @@ struct ContentView: View {
                     Spacer(minLength: 0)
                     VStack(spacing: 12.0) {
                         Text(eventManager.eventHeading)
-                            .font(.system(size: 44.0, weight: .bold))
+                            .font(.system(size: 40.0, weight: .bold))
                         Text(eventManager.eventDescription)
                             .multilineTextAlignment(.center)
+                            .padding(.bottom)
                         CountdownView(eventManager: eventManager)
                     }
                     .layoutPriority(1)
