@@ -21,11 +21,11 @@ struct ContentView: View {
                     Image(eventManager.imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(height: proxy.size.height * 0.8)
+                        .frame(height: proxy.size.height * 0.6)
+                        .ignoresSafeArea()
                     Spacer(minLength: 0.0)
                 }
                 VStack(spacing: 40.0) {
-                    Spacer(minLength: 0)
                     VStack(spacing: 12.0) {
                         Text(eventManager.eventHeading)
                             .font(.system(size: 40.0, weight: .bold))
@@ -41,7 +41,7 @@ struct ContentView: View {
                 }
                 .foregroundColor(Color("HeroColor"))
                 .frame(width: proxy.size.width,
-                       height: proxy.size.height / 2)
+                       height: proxy.size.height * 0.4)
             }
             .statusBar(hidden: true)
             .frame(width: proxy.size.width,
