@@ -71,7 +71,7 @@ struct ASETimer_WidgetEntryView : View {
                     }
                 }
                 .font(widgetFamily == .systemSmall ? .body : .title)
-                .foregroundColor(.white)
+                .foregroundColor(Color("HeroColor"))
                 Spacer()
             }
         }

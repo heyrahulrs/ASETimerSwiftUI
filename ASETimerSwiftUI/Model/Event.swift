@@ -9,26 +9,9 @@
 import Foundation
 
 struct Event {
-    let heading: String = "Peek Performance"
+    var heading: String { "WWDC 2022" }
     var description: String {
-        let dateFormat = "MMMM d"
-        let timeFormat = "h:mm a"
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = dateFormat
-        let date = dateformatter.string(from: Date(timeIntervalSince1970: unixTime))
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = timeFormat
-        let time = timeFormatter.string(from: Date(timeIntervalSince1970: unixTime))
-        let abbreviation = abbreviation()
-        return "Watch on " + date + " at " + time + " " + abbreviation
+        "The Worldwide Developers Conference is coming. Join us online June 6–10."
     }
-    func abbreviation() -> String {
-        for(key, value) in TimeZone.abbreviationDictionary {
-            if value == TimeZone.current.identifier {
-                return key
-            }
-        }
-        return ""
-    }
-    let unixTime: TimeInterval = 1646762400
+    var unixTime: TimeInterval { 1654534800 }
 }

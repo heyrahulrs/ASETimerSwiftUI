@@ -17,10 +17,13 @@ struct ContentView: View {
             ZStack(alignment: .bottom){
                 Color.black
                     .ignoresSafeArea()
-                Image(eventManager.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .padding()
+                VStack {
+                    Image(eventManager.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: proxy.size.height * 0.8)
+                    Spacer(minLength: 0.0)
+                }
                 VStack(spacing: 40.0) {
                     Spacer(minLength: 0)
                     VStack(spacing: 12.0) {
@@ -32,11 +35,13 @@ struct ContentView: View {
                         CountdownView(eventManager: eventManager)
                     }
                     .layoutPriority(1)
+                    .padding(.horizontal)
                     .padding(.bottom)
                     Spacer(minLength: 0)
                 }
-                .foregroundColor(.white)
-                .frame(height: proxy.size.height / 2)
+                .foregroundColor(Color("HeroColor"))
+                .frame(width: proxy.size.width,
+                       height: proxy.size.height / 2)
             }
             .statusBar(hidden: true)
             .frame(width: proxy.size.width,
@@ -56,7 +61,7 @@ struct ContentView_Previews: PreviewProvider {
             ContentView(eventManager: eventManager)
                 .previewDevice("iPhone 13 mini")
             ContentView(eventManager: eventManager)
-                .previewDevice("iPhone SE (2nd generation)")
+                .previewDevice("iPhone SE (3rd generation)")
         }
     }
 }
