@@ -106,7 +106,7 @@ struct ASETimer_Widget: Widget {
             ASETimer_WidgetEntryView(entry: entry)
         }
         .configurationDisplayName("ASE Timer")
-        .description("Countdown for Apple Event March 2022 Keynote")
+        .description("Countdown for WWDC 2022 Keynote")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
