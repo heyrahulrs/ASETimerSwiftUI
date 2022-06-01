@@ -6,7 +6,7 @@
 //  Copyright © 2020 Rahul Sharma. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 typealias Time = (days: Int, hours: Int, minutes: Int, seconds: Int)
@@ -27,6 +27,14 @@ class EventManager: ObservableObject {
 
     var eventDate: Date {
         Date(timeIntervalSince1970: event.unixTime)
+    }
+    
+    var eventBackgroundColors: [Color] {
+        event.eventBackgroundColors
+    }
+    
+    var eventTextColor: Color {
+        event.eventTextColor
     }
     
     @Published var isCountdownOver: Bool = false

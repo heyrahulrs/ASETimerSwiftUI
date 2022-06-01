@@ -15,14 +15,14 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .bottom){
-                Color.black
+                LinearGradient(colors: eventManager.eventBackgroundColors, startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
                 VStack {
                     Image(eventManager.imageName)
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(contentMode: .fit)
                         .frame(height: proxy.size.height * 0.6)
-                        .ignoresSafeArea()
+                        .scaleEffect(1.2)
                     Spacer(minLength: 0.0)
                 }
                 VStack(spacing: 40.0) {
@@ -39,7 +39,7 @@ struct ContentView: View {
                     .padding(.bottom)
                     Spacer(minLength: 0)
                 }
-                .foregroundColor(Color("HeroColor"))
+                .foregroundColor(eventManager.eventTextColor)
                 .frame(width: proxy.size.width,
                        height: proxy.size.height * 0.4)
             }

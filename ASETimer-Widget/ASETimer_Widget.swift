@@ -44,8 +44,12 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     var date = Date()
-    var eventDate: Date = Date(timeIntervalSince1970: Event().unixTime)
+    private var event = Event()
+    var eventDate: Date { Date(timeIntervalSince1970: event.unixTime) }
     var eventConcluded: Bool { eventDate < date }
+    var eventBackgroundColors: [Color] {
+        event.eventBackgroundColors
+    }
 }
 
 struct ASETimer_WidgetEntryView : View {
@@ -80,10 +84,13 @@ struct ASETimer_WidgetEntryView : View {
 
     var body: some View {
         ZStack {
+            LinearGradient(colors: entry.eventBackgroundColors,
+                           startPoint: .top,
+                           endPoint: .bottom)
             GeometryReader { geometry in
                 Image(imageName)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: widgetFamily == .systemSmall ? .fill : .fit)
                     .frame(width: geometry.size.width,
                            height: geometry.size.height)
                     .clipped()
