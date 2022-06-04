@@ -24,6 +24,7 @@
 		20E38AE42318DD06001BB042 /* CountdownRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38AE32318DD06001BB042 /* CountdownRow.swift */; };
 		20E38AE62318DD29001BB042 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E38AE52318DD29001BB042 /* SeparatorView.swift */; };
 		20F7E0A924824EAE00966704 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7E0A824824EAE00966704 /* EventManager.swift */; };
+		C27A6923284B3CB0005F6C53 /* ASETimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27A6922284B3CB0005F6C53 /* ASETimerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 208BA809252D9567003EC6FF;
 			remoteInfo = "ASETimer-WidgetExtension";
+		};
+		C27A6924284B3CB0005F6C53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20C4C34A22F833D00011C0B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20C4C35122F833D00011C0B0;
+			remoteInfo = ASETimerSwiftUI;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -71,6 +79,8 @@
 		20E38AE32318DD06001BB042 /* CountdownRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownRow.swift; sourceTree = "<group>"; };
 		20E38AE52318DD29001BB042 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		20F7E0A824824EAE00966704 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		C27A6920284B3CB0005F6C53 /* ASETimeSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASETimeSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C27A6922284B3CB0005F6C53 /* ASETimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASETimerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		20C4C34F22F833D00011C0B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C27A691D284B3CB0005F6C53 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -153,6 +170,7 @@
 			children = (
 				20C4C35422F833D00011C0B0 /* ASETimerSwiftUI */,
 				208BA810252D9567003EC6FF /* ASETimer-Widget */,
+				C27A6921284B3CB0005F6C53 /* ASETimerTests */,
 				208BA80B252D9567003EC6FF /* Frameworks */,
 				20C4C35322F833D00011C0B0 /* Products */,
 			);
@@ -163,6 +181,7 @@
 			children = (
 				20C4C35222F833D00011C0B0 /* ASE Timer.app */,
 				208BA80A252D9567003EC6FF /* ASETimer-WidgetExtension.appex */,
+				C27A6920284B3CB0005F6C53 /* ASETimeSwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +208,14 @@
 				20C4C35E22F833D10011C0B0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C27A6921284B3CB0005F6C53 /* ASETimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C27A6922284B3CB0005F6C53 /* ASETimerTests.swift */,
+			);
+			path = ASETimerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,13 +257,31 @@
 			productReference = 20C4C35222F833D00011C0B0 /* ASE Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C27A691F284B3CB0005F6C53 /* ASETimeSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C27A6928284B3CB0005F6C53 /* Build configuration list for PBXNativeTarget "ASETimeSwiftUITests" */;
+			buildPhases = (
+				C27A691C284B3CB0005F6C53 /* Sources */,
+				C27A691D284B3CB0005F6C53 /* Frameworks */,
+				C27A691E284B3CB0005F6C53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C27A6925284B3CB0005F6C53 /* PBXTargetDependency */,
+			);
+			name = ASETimeSwiftUITests;
+			productName = ASETimeSwiftUITests;
+			productReference = C27A6920284B3CB0005F6C53 /* ASETimeSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		20C4C34A22F833D00011C0B0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Rahul Sharma";
 				TargetAttributes = {
@@ -245,6 +290,10 @@
 					};
 					20C4C35122F833D00011C0B0 = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					C27A691F284B3CB0005F6C53 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 20C4C35122F833D00011C0B0;
 					};
 				};
 			};
@@ -263,6 +312,7 @@
 			targets = (
 				20C4C35122F833D00011C0B0 /* ASETimerSwiftUI */,
 				208BA809252D9567003EC6FF /* ASETimer-WidgetExtension */,
+				C27A691F284B3CB0005F6C53 /* ASETimeSwiftUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,6 +332,13 @@
 			files = (
 				20C4C35F22F833D10011C0B0 /* Preview Assets.xcassets in Resources */,
 				20C4C35C22F833D10011C0B0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C27A691E284B3CB0005F6C53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +370,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C27A691C284B3CB0005F6C53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C27A6923284B3CB0005F6C53 /* ASETimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -320,6 +385,11 @@
 			isa = PBXTargetDependency;
 			target = 208BA809252D9567003EC6FF /* ASETimer-WidgetExtension */;
 			targetProxy = 208BA816252D956B003EC6FF /* PBXContainerItemProxy */;
+		};
+		C27A6925284B3CB0005F6C53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20C4C35122F833D00011C0B0 /* ASETimerSwiftUI */;
+			targetProxy = C27A6924284B3CB0005F6C53 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -333,7 +403,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = "ASETimer-Widget/Info.plist";
@@ -366,7 +436,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 6R75J2CEEH;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = "ASETimer-Widget/Info.plist";
@@ -570,6 +640,44 @@
 			};
 			name = Release;
 		};
+		C27A6926284B3CB0005F6C53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rahulrs.ASETimeSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ASE Timer.app/ASE Timer";
+			};
+			name = Debug;
+		};
+		C27A6927284B3CB0005F6C53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rahulrs.ASETimeSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ASE Timer.app/ASE Timer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -596,6 +704,15 @@
 			buildConfigurations = (
 				20C4C36722F833D10011C0B0 /* Debug */,
 				20C4C36822F833D10011C0B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C27A6928284B3CB0005F6C53 /* Build configuration list for PBXNativeTarget "ASETimeSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C27A6926284B3CB0005F6C53 /* Debug */,
+				C27A6927284B3CB0005F6C53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
