@@ -11,23 +11,22 @@ import SwiftUI
 struct Event {
     
     var heading: String { "WWDC 2022" }
+        
+    private let dateFormat = "MMMM d' at 'h:mm a"
+    var timeZone: TimeZone? = nil
     
     var description: String {
-        let dateFormat = "MMMM d"
-        let timeFormat = "h:mm a"
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = dateFormat
-        let date = dateformatter.string(from: Date(timeIntervalSince1970: unixTime))
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = timeFormat
-        let time = timeFormatter.string(from: Date(timeIntervalSince1970: unixTime))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        dateFormatter.timeZone = timeZone ?? TimeZone.current
+        let date = dateFormatter.string(from: Date(timeIntervalSince1970: unixTime))
         let abbreviation = abbreviation()
-        return "Watch on " + date + " at " + time + " " + abbreviation + ".\nView online at apple.com or on the Apple TV app."
+        return "Watch on " + date + " " + abbreviation + ".\nView online at apple.com or on the Apple TV app."
     }
     
     func abbreviation() -> String {
         for(key, value) in TimeZone.abbreviationDictionary {
-            if value == TimeZone.current.identifier {
+            if value == (timeZone ?? TimeZone.current).identifier {
                 return key
             }
         }

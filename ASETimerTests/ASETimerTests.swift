@@ -46,6 +46,19 @@ class ASETimerTests: XCTestCase {
         XCTAssertEqual(description, expected)
     }
     
+    func testEventDescriptionInPST() {
+        // given
+        var event = Event()
+        
+        // when
+        event.timeZone = TimeZone(abbreviation: "PDT")!
+        let description = event.description
+        
+        // then
+        let expected = "Watch on June 6 at 10:00 AM PDT.\nView online at apple.com or on the Apple TV app."
+        XCTAssertEqual(description, expected)
+    }
+    
     func testTimeRemaining() {
         // given
         let eventManager = EventManager()
